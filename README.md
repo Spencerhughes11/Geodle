@@ -1,4 +1,5 @@
-# Hackathon2022JaxPeteSpence
+# Geodle
+- Created April 2022
 ============================= Welcome to Geodle! ==============================
 
 - The goal of the game is to successfully guess the secret country.
