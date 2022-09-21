@@ -74,6 +74,10 @@ class Game:
 
     self.loser_screen_surface = input_font.render("SORRY, YOU'RE OUT OF GUESSES!",True,"Red")
     self.loser_screen_shadow_surface = input_font.render("SORRY, YOU'RE OUT OF GUESSES!",True,(112, 5, 0))
+    
+    # prints the winning Geodle you just guessed
+    self.winner_secret_country_surface = input_font.render(f"The Geodle Was: {self.comparison.secretcountry.name}!", True, "Green")
+    self.winner_secret_country_shadow_surface = input_font.render(f"The Geodle Was: {self.comparison.secretcountry.name}!", True, (34, 139, 34))
 
     self.secret_country_surface = input_font.render(f"The Geodle Was: {self.comparison.secretcountry.name}!",True,"Red")
     self.secret_country_shadow_surface = input_font.render(f"The Geodle Was: {self.comparison.secretcountry.name}!",True,(112, 5, 0))
@@ -164,6 +168,9 @@ class Game:
                 if event.key == pygame.K_BACKSPACE:
                   # get text input from 0 to -1 i.e. end.
                   self.user_text = self.user_text[:-1]
+                 
+                if self.user_text[-1] == ' ':
+                  self.user_text = self.user_text.strip()        #if user accidentally types space at end, remove space
 
                 elif event.key == pygame.K_RETURN:
                   #run
